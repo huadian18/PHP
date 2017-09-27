@@ -15,3 +15,11 @@
 ###url_encode() && rawurlencode()
     同：对除·-_.·之外所有非字母数字字符替换为%后跟两位十六制数
     异：url_encode 将空格转化为·+·
+    
+###json_encode() && serialize()
+    `$demo = [
+         'demo'=>0.1
+     ];
+     
+     var_dump(json_encode($demo));//string(12) "{"demo":0.1}"
+     var_dump(serialize($demo));`//string(77) "a:1:{s:4:"demo";d:0.1000000000000000055511151231257827021181583404541015625;}"
