@@ -1,0 +1,124 @@
+<extend name="Layout/base" />
+<block name="main">
+<div class="wrapper container">
+	<!--侧边导航栏-->
+	<include file="Operate/Layout/asideNav" />
+	<!--侧边导航栏-->
+	<!--右边主要内容-->
+	<div class="main">
+		<h3 class="text-center">{$departmentName}每周计划完成录入</h3>
+		<form action="">
+			<div class="data-panel">
+				<div class="data-content">
+					<table class="table table-bordered">
+						<tr>
+						 	<th class="text-center">周</th>
+						 	<th class="text-center">产量</th>
+						 	<th class="text-center">产值</th>
+						 	<th class="text-center">利润</th>
+						 	<th class="text-center">回款</th>
+						 	<th class="text-center">操作</th>
+						</tr>
+						<tr class="text-center">
+						 	<td>{$maxWeek+1}</td>
+						 	<td><span class="insertInput">--</span></td>
+						 	<td><span class="insertInput">--</span></td>
+						 	<td><span class="insertInput">--</span></td>
+						 	<td><span class="insertInput">--</span></td>
+						 	<td id="insertWeek" style="cursor: pointer;">插入当前周</td>
+						</tr>
+						<foreach name="list" item="v">
+							<tr class="text-center">
+								<td>{$v.interval_value}</td>
+								<td>{$v.output}</td>
+								<td>{$v.output_value}</td>
+								<td>{$v.profit}</td>
+								<td>{$v.payment}</td>
+								<td>无</td>
+							</tr>
+						</foreach>
+
+					</table>
+					<ul class="pagination">
+						<?php
+							$prePage = $page > 1 ? $page : 1;
+							$nextPage = $page >= $maxPage ? $maxPage : $page+1;
+						?>
+						<li ><a href="{:U('Operate/complete',array('department'=>$department,'p'=>$prePage))}">&laquo;</a></li>
+						<foreach name="pageList" item="v">
+							<?php $active=($page==$v) ? "active" : "";?>
+							<li class="{$active}"><a href="{:U('Operate/complete',array('department'=>$department,'p'=>$v))}">{$v}</a></li>
+						</foreach>
+						<li><a href="{:U('Operate/complete',array('department'=>$department,'p'=>$nextPage))}">&raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="data-content text-right" style="display:none;float:right;" id="submitBtn">
+				<input type="hidden" id="department" name="department" value="{$department}">
+				<input type="hidden" id="weekNum" name="weekNum" value="{$maxWeek+1}">
+				<button type="button" class="btn btn-primary">提交</button>
+			</div>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="/Public/static/js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+
+	    $(".btn").on("click",function () {
+			//检查数据是否为空
+			var $input = $("input[name^='week']"),
+				flag=true,
+				data = [],
+				department=$("#department").val();
+            	weekNum=$("#weekNum").val();
+
+            $input.each(function (i) {
+                if(!$(this).val()){
+                    flag = false;
+                    return false;
+				}
+				data.push($(this).val());
+            });
+            if(!flag){
+                alert('不可为空');
+                return false;
+			}
+			//提交
+			console.log(JSON.stringify(data));
+            $.ajax({
+                url: '{:U("completeSave")}',
+                type: 'post',
+                data: {week:data,department:department,weekNum:weekNum},
+                dataType: 'json',
+                success: function (result) {
+                    if (result.status) {
+                        alert(result.message);
+                        window.location.reload();
+                    } else {
+                        alert(result.message);
+                    }
+                },
+                error: function () {
+                    alert('no');
+                }
+            });
+        });
+
+		$("#insertWeek").on("click",function(){
+			if(this.innerHTML == "取消"){
+				$(".insertInput").html("--");
+				$(this).html("插入当前周");
+				$("#submitBtn").css("display","none");
+			}else{
+//				$(".insertInput").html("<input type='text'>");
+				$(".insertInput").html(function (i) {
+					return "<input type='text' name='week["+i+"]'>";
+                });
+				$(this).html("取消");
+				$("#submitBtn").css("display","inline-block");
+			}
+		})
+	})
+</script>
+</block>

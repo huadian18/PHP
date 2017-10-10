@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{$title}</title>
+	<link rel="stylesheet" href="/Public/static/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/Public/static/css/index.css">
+</head>
+<body>
+<nav class="navbar-default navbar-blue">
+  <div class="container">
+    <!-- logo -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">brand</a>
+    </div>
+    <!-- 用户名 -->
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="{:U('operate/index')}" class="btn-menu">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+<block name="main"></block>
+</body>
+</html>

@@ -1,0 +1,526 @@
+[ 2017-10-09T23:12:53+08:00 ] 127.0.0.1 /Home/Operate/complete/department/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000592s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001297s ]
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 LIMIT 1   [ RunTime:0.0005s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000112s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\1e821ff8442e392593d48c3f7d25e2c2.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012554s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012610s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000386s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000429s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000529s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2017-10-09T23:12:58+08:00 ] 127.0.0.1 /Home/Operate/completeSave.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000352s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000418s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000468s ]
+ERR: {"week":["12","32","23","23","2"],"department":"1","weekNum":"2"}
+ERR: {"2":["12","32","23","23","2"]}
+ERR: {"output":"12","output_value":"32","profit":"23","payment":"23","interval_type":4,"interval_value":2}
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0055s ]
+SQL: INSERT INTO `complete` (`department`,`output`,`output_value`,`profit`,`payment`,`year`,`interval_type`,`interval_value`) VALUES ('1','12','32','23','23','2017','4','2') [ RunTime:0.0004s ]
+SQL: SHOW COLUMNS FROM `plan` [ RunTime:0.0062s ]
+SQL: SHOW COLUMNS FROM `revise` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `complete` SET `output`='36.00000',`output_value`='96.00000',`profit`='378.00000',`payment`='57.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' [ RunTime:0.0004s ]
+ERR: {"output":"36.00000","output_value":"96.00000","profit":"378.00000","payment":"57.00000","0":{"department":"1","year":"2017","interval_type":"3","interval_value":"1"}}
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Plan.class.php 第 34 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Plan.class.php 第 35 行.
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0004s ]
+ERR: null
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 40 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 41 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 42 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 43 行.
+SQL: UPDATE `plan` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Revise.class.php 第 59 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Revise.class.php 第 60 行.
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 64 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 65 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 66 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 67 行.
+SQL: UPDATE `revise` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0004s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `complete` SET `output`='36.00000',`output_value`='96.00000',`profit`='378.00000',`payment`='57.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' [ RunTime:0.0004s ]
+ERR: {"output":"36.00000","output_value":"96.00000","profit":"378.00000","payment":"57.00000","0":{"department":"1","year":"2017","interval_type":"2","interval_value":"1"}}
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Plan.class.php 第 34 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Plan.class.php 第 35 行.
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0004s ]
+ERR: null
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 40 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 41 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 42 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 43 行.
+SQL: UPDATE `plan` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Revise.class.php 第 59 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Revise.class.php 第 60 行.
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0004s ]
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 64 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 65 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 66 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 67 行.
+SQL: UPDATE `revise` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0007s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `complete` SET `output`='192.00000',`output_value`='197.00000',`profit`='519.00000',`payment`='209.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' [ RunTime:0.0004s ]
+ERR: {"output":"192.00000","output_value":"197.00000","profit":"519.00000","payment":"209.00000","0":{"department":"1","year":"2017","interval_type":"1","interval_value":"2017"}}
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Plan.class.php 第 34 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Plan.class.php 第 35 行.
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0003s ]
+ERR: null
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 40 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 41 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 42 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Plan.class.php 第 43 行.
+SQL: UPDATE `plan` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0004s ]
+NOTIC: [8] Undefined index: interval_type E:\web\yg\Application\Home\Model\Revise.class.php 第 59 行.
+NOTIC: [8] Undefined index: interval_value E:\web\yg\Application\Home\Model\Revise.class.php 第 60 行.
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null LIMIT 1   [ RunTime:0.0003s ]
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 64 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 65 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 66 行.
+NOTIC: [2] bcdiv(): Division by zero E:\web\yg\Application\Home\Model\Revise.class.php 第 67 行.
+SQL: UPDATE `revise` SET `output_rate`=NULL,`output_value_rate`=NULL,`profit_rate`=NULL,`payment_rate`=NULL WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = null AND `interval_value` = null [ RunTime:0.0004s ]
+
+[ 2017-10-09T23:12:59+08:00 ] 127.0.0.1 /Home/Operate/complete/department/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000402s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0062s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0003s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000111s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\1e821ff8442e392593d48c3f7d25e2c2.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012949s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000264s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000310s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000506s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000548s ]
+
+[ 2017-10-09T23:14:40+08:00 ] 127.0.0.1 /Home/Operate/complete/department/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000453s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000656s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0518s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 LIMIT 1   [ RunTime:0.0012s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 1   [ RunTime:0.0011s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\1e821ff8442e392593d48c3f7d25e2c2.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.025494s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.025607s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000703s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000772s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000812s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000877s ]
+
+[ 2017-10-09T23:14:46+08:00 ] 127.0.0.1 /Home/Operate/completeSave.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000394s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000474s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000531s ]
+ERR: {"week":["2","3","3","4","3"],"department":"1","weekNum":"3"}
+ERR: {"3":["2","3","3","4","3"]}
+ERR: {"output":"2","output_value":"3","profit":"3","payment":"4","interval_type":4,"interval_value":3}
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0061s ]
+SQL: INSERT INTO `complete` (`department`,`output`,`output_value`,`profit`,`payment`,`year`,`interval_type`,`interval_value`) VALUES ('1','2','3','3','4','2017','4','3') [ RunTime:0.0006s ]
+SQL: SHOW COLUMNS FROM `plan` [ RunTime:0.0059s ]
+SQL: SHOW COLUMNS FROM `revise` [ RunTime:0.0056s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `complete` SET `output`='38.00000',`output_value`='99.00000',`profit`='381.00000',`payment`='61.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' [ RunTime:0.0004s ]
+ERR: {"output":"38.00000","output_value":"99.00000","profit":"381.00000","payment":"61.00000","department":"1","year":"2017","interval_type":"3","interval_value":"1"}
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0003s ]
+ERR: {"id":"4","department":"1","output":"3","output_value":"3","profit":"3","payment":"3","year":"2017","interval_type":"3","interval_value":"1","sign":"","output_rate":"","output_value_rate":"","profit_rate":"","payment_rate":""}
+SQL: UPDATE `plan` SET `output_rate`='12.66',`output_value_rate`='33.00',`profit_rate`='127.00',`payment_rate`='20.33' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' [ RunTime:0.0005s ]
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `revise` SET `output_rate`='12.66',`output_value_rate`='33.00',`profit_rate`='127.00',`payment_rate`='20.33' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 3 AND `interval_value` = '1' [ RunTime:0.0005s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `complete` SET `output`='38.00000',`output_value`='99.00000',`profit`='381.00000',`payment`='61.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' [ RunTime:0.0004s ]
+ERR: {"output":"38.00000","output_value":"99.00000","profit":"381.00000","payment":"61.00000","department":"1","year":"2017","interval_type":"2","interval_value":"1"}
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0003s ]
+ERR: {"id":"3","department":"1","output":"2","output_value":"2","profit":"2","payment":"2","year":"2017","interval_type":"2","interval_value":"1","sign":"","output_rate":"","output_value_rate":"","profit_rate":"","payment_rate":""}
+SQL: UPDATE `plan` SET `output_rate`='19.00',`output_value_rate`='49.50',`profit_rate`='190.50',`payment_rate`='30.50' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `revise` SET `output_rate`='19.00',`output_value_rate`='49.50',`profit_rate`='190.50',`payment_rate`='30.50' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 2 AND `interval_value` = '1' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' LIMIT 1   [ RunTime:0.0003s ]
+SQL: UPDATE `complete` SET `output`='194.00000',`output_value`='200.00000',`profit`='522.00000',`payment`='213.00000' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' [ RunTime:0.0004s ]
+ERR: {"output":"194.00000","output_value":"200.00000","profit":"522.00000","payment":"213.00000","department":"1","year":"2017","interval_type":"1","interval_value":"2017"}
+SQL: SELECT * FROM `plan` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' LIMIT 1   [ RunTime:0.0003s ]
+ERR: {"id":"2","department":"1","output":"1","output_value":"1","profit":"1","payment":"1","year":"2017","interval_type":"1","interval_value":"2017","sign":"","output_rate":"","output_value_rate":"","profit_rate":"","payment_rate":""}
+SQL: UPDATE `plan` SET `output_rate`='194.00',`output_value_rate`='200.00',`profit_rate`='522.00',`payment_rate`='213.00' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' [ RunTime:0.0004s ]
+SQL: SELECT * FROM `revise` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' LIMIT 1   [ RunTime:0.0004s ]
+SQL: UPDATE `revise` SET `output_rate`='194.00',`output_value_rate`='200.00',`profit_rate`='522.00',`payment_rate`='213.00' WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 1 AND `interval_value` = '2017' [ RunTime:0.0005s ]
+
+[ 2017-10-09T23:14:47+08:00 ] 127.0.0.1 /Home/Operate/complete/department/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000573s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000507s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0061s ]
+SQL: SELECT COUNT(1) AS tp_count FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 LIMIT 1   [ RunTime:0.0004s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 1   [ RunTime:0.0003s ]
+SQL: SELECT * FROM `complete` WHERE `department` = 1 AND `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC LIMIT 0,10   [ RunTime:0.0004s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000116s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\1e821ff8442e392593d48c3f7d25e2c2.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011811s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011864s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000231s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000428s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000471s ]
+
+[ 2017-10-09T23:27:55+08:00 ] 127.0.0.1 /Home/operate/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000481s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001019s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `plan` [ RunTime:0.0066s ]
+SQL: SELECT * FROM `plan` ORDER BY id DESC  [ RunTime:0.0009s ]
+SQL: SHOW COLUMNS FROM `complete` [ RunTime:0.0060s ]
+SQL: SELECT * FROM ( SELECT * FROM `complete` WHERE `year` = '2017' AND `interval_type` = 4 ORDER BY id DESC  ) a GROUP BY a.department  [ RunTime:0.0010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\fcbd5f627383f6872ae5ac3ff0233016.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009819s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000379s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000521s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000564s ]
+
+[ 2017-10-09T23:27:58+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000391s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000544s ]
+
+[ 2017-10-09T23:28:42+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000486s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000582s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000684s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007162s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007222s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000320s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000495s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000542s ]
+
+[ 2017-10-09T23:29:11+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000420s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000600s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000072s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000178s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008447s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008508s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000370s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000416s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000921s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001002s ]
+
+[ 2017-10-09T23:31:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000019s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000547s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000773s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000849s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000038s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006933s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006988s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000501s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2017-10-09T23:53:53+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007617s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007672s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000379s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000419s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000513s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000563s ]
+
+[ 2017-10-09T23:54:01+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000366s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000572s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000628s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000130s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008937s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000354s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000399s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000590s ]
+
+[ 2017-10-09T23:55:03+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000345s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000414s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000467s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007100s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007158s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000303s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000351s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000540s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2017-10-09T23:55:04+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001145s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001243s ]
+
+[ 2017-10-09T23:55:05+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000028s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000570s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000549s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000641s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.007713s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007783s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000692s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000952s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001034s ]
+
+[ 2017-10-09T23:55:05+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000026s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000595s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001003s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001114s ]
+
+[ 2017-10-09T23:57:16+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000409s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000560s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000615s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000048s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000115s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009764s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009820s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000351s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000392s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000546s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000592s ]
+
+[ 2017-10-09T23:57:17+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000355s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000676s ]
+
+[ 2017-10-09T23:57:36+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000341s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000514s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000568s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000099s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008787s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008861s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000490s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000537s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000562s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000608s ]
+
+[ 2017-10-09T23:57:37+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000534s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000777s ]
+
+[ 2017-10-09T23:57:51+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000093s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006596s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006648s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000214s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000459s ]
+
+[ 2017-10-09T23:57:52+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000024s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000582s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000993s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001088s ]
+
+[ 2017-10-09T23:59:32+08:00 ] 127.0.0.1 /
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000847s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000104s ]
+NOTIC: [8] Undefined variable: title E:\web\yg\Application\Runtime\Cache\Home\2a94b8bda04ff446dcedd42276fc99ee.php 第 5 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009305s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009362s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000376s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000551s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000597s ]
+
+[ 2017-10-09T23:59:32+08:00 ] 127.0.0.1 /Home/Index/getNavlist.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000372s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000622s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000681s ]
+

@@ -1,0 +1,214 @@
+<extend name="Layout/base"/>
+<block name="main">
+    <div class="wrapper container">
+
+        <!--侧边导航栏-->
+        <include file="Operate/Layout/asideNav"/>
+        <!--侧边导航栏-->
+
+        <!--右边主要内容-->
+        <div class="main">
+            <?php $topic = count($list) ? '已录入' : '录入后不可修改';?>
+            <h3 class="text-center">{$departmentName} {$year}年计划录入（{$topic}）</h3>
+            <form action="">
+                <div class="data-panel">
+                    <div class="data-title"><span>年计划</span></div>
+                    <div class="data-content">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">产量</th>
+                                <th class="text-center">产值</th>
+                                <th class="text-center">利润</th>
+                                <th class="text-center">回款</th>
+                            </tr>
+                            <tr class="text-center">
+                                <td><input type="text" name="year[{$year}][0]"></td>
+                                <td><input type="text" name="year[{$year}][1]"></td>
+                                <td><input type="text" name="year[{$year}][2]"></td>
+                                <td><input type="text" name="year[{$year}][3]"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="data-panel">
+                    <div class="data-title"><span>季度计划</span></div>
+                    <div class="data-content">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">季度</th>
+                                <th class="text-center">产量</th>
+                                <th class="text-center">产值</th>
+                                <th class="text-center">利润</th>
+                                <th class="text-center">回款</th>
+                            </tr>
+                            <tr class="text-center">
+                                <td>一</td>
+                                <td><input type="text" name="season[1][0]"></td>
+                                <td><input type="text" name="season[1][1]"></td>
+                                <td><input type="text" name="season[1][2]"></td>
+                                <td><input type="text" name="season[1][3]"></td>
+                            </tr>
+                            <!--<tr class="text-center">-->
+                            <!--<td>二</td>-->
+                            <!--<td><input type="text" name="season[2][]"></td>-->
+                            <!--<td><input type="text" name="season[2][]"></td>-->
+                            <!--<td><input type="text" name="season[2][]"></td>-->
+                            <!--<td><input type="text" name="season[2][]"></td>-->
+                            <!--</tr>-->
+                            <!--<tr class="text-center">-->
+                            <!--<td>三</td>-->
+                            <!--<td><input type="text" name="season[3][]"></td>-->
+                            <!--<td><input type="text" name="season[3][]"></td>-->
+                            <!--<td><input type="text" name="season[3][]"></td>-->
+                            <!--<td><input type="text" name="season[3][]"></td>-->
+                            <!--</tr>-->
+                            <!--<tr class="text-center">-->
+                            <!--<td>四</td>-->
+                            <!--<td><input type="text" name="season[4][]"></td>-->
+                            <!--<td><input type="text" name="season[4][]"></td>-->
+                            <!--<td><input type="text" name="season[4][]"></td>-->
+                            <!--<td><input type="text" name="season[4][]"></td>-->
+                            <!--</tr>-->
+                        </table>
+                    </div>
+                </div>
+                <div class="data-panel">
+                    <div class="data-title"><span>月计划</span></div>
+                    <div class="data-content">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">月份</th>
+                                <th class="text-center">产量</th>
+                                <th class="text-center">产值</th>
+                                <th class="text-center">利润</th>
+                                <th class="text-center">回款</th>
+                            </tr>
+                            <tr class="text-center">
+                                <td>一</td>
+                                <td><input type="text" name="month[1][0]"></td>
+                                <td><input type="text" name="month[1][1]"></td>
+                                <td><input type="text" name="month[1][2]"></td>
+                                <td><input type="text" name="month[1][3]"></td>
+                            </tr>
+                            <tr class="text-center">
+                                <td>二</td>
+                                <td><input type="text" name="month[2][0]"></td>
+                                <td><input type="text" name="month[2][1]"></td>
+                                <td><input type="text" name="month[2][2]"></td>
+                                <td><input type="text" name="month[2][3]"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="data-panel">
+                    <div class="data-title"><span>周计划</span></div>
+                    <div class="data-content">
+                        <table class="table table-bordered">
+                            <tr>
+                                <th class="text-center">周</th>
+                                <th class="text-center">产量</th>
+                                <th class="text-center">产值</th>
+                                <th class="text-center">利润</th>
+                                <th class="text-center">回款</th>
+                            </tr>
+                            <for start="0" end="$weekNum" name="i">
+                                <tr class="text-center">
+                                    <td>{$i+1}</td>
+                                    <td><input type="text" name="week[{$i+1}][0]"></td>
+                                    <td><input type="text" name="week[{$i+1}][1]"></td>
+                                    <td><input type="text" name="week[{$i+1}][2]"></td>
+                                    <td><input type="text" name="week[{$i+1}][3]"></td>
+                                </tr>
+                            </for>
+                        </table>
+                    </div>
+                </div>
+                <div class="alert alert-success" style="display: none;">添加成功。</div>
+                <div class="alert alert-warning" style="display: none;">添加失败。</div>
+                <div class="data-content text-right">
+                    <input type="hidden" name="department" value="{$department}">
+                    <button type="button" class="btn btn-primary">提交</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="text/javascript" src="/Public/static/js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            var info = {
+                list: '{$list|json_encode}'
+            };
+            var common = {
+                init: function () {
+                    common.fill();
+                },
+                fill: function () {
+                    var obj = eval('(' + info.list + ')');
+                    if (obj.length > 0) {
+                        //遍历数据填入表中
+                        $.each(obj, function (i, n) {
+                            if (n.interval_type == '1') {
+                                $("input[name='year[" + n.interval_value + "][0]']").val(n.output);
+                                $("input[name='year[" + n.interval_value + "][1]']").val(n.output_value);
+                                $("input[name='year[" + n.interval_value + "][2]']").val(n.profit);
+                                $("input[name='year[" + n.interval_value + "][3]']").val(n.payment);
+                            } else if (n.interval_type == '2') {
+                                $("input[name='season[" + n.interval_value + "][0]']").val(n.output);
+                                $("input[name='season[" + n.interval_value + "][1]']").val(n.output_value);
+                                $("input[name='season[" + n.interval_value + "][2]']").val(n.profit);
+                                $("input[name='season[" + n.interval_value + "][3]']").val(n.payment);
+
+                            } else if (n.interval_type == '3') {
+                                $("input[name='month[" + n.interval_value + "][0]']").val(n.output);
+                                $("input[name='month[" + n.interval_value + "][1]']").val(n.output_value);
+                                $("input[name='month[" + n.interval_value + "][2]']").val(n.profit);
+                                $("input[name='month[" + n.interval_value + "][3]']").val(n.payment);
+                            } else if (n.interval_type == '4') {
+                                $("input[name='week[" + n.interval_value + "][0]']").val(n.output);
+                                $("input[name='week[" + n.interval_value + "][1]']").val(n.output_value);
+                                $("input[name='week[" + n.interval_value + "][2]']").val(n.profit);
+                                $("input[name='week[" + n.interval_value + "][3]']").val(n.payment);
+                            }
+                        });
+                        //提交按钮设置为不可点击
+                        $("input").attr('readonly','readonly');
+                        $(".btn").attr('disabled',true);
+                    }
+                }
+            };
+
+            //初始化
+            common.init();
+
+            $(".btn-primary").on("click", function () {
+                var form = $("form").serialize();
+                $(this).attr('disable',true);
+                $.ajax({
+                    url: '{:U("planSave")}',
+                    type: 'post',
+                    data: form,
+                    dataType: 'json',
+                    success: function (result) {
+                        if (result.status == '1') {
+                            $(".alert-success").text(result.message).css('display','block');
+                            setTimeout(function () {
+                                window.location.href = '/home/operate/index';
+                            },2000);
+                        } else {
+                            $(".alert-warning").text(result.message).css('display','block');
+                            $(this).attr('disable',false);
+                        }
+                    },
+                    error: function () {
+                        $(".alert-warning").css('display','block');
+                        $(this).attr('disable',false);
+                    }
+                });
+            });
+
+            $("input").on('change',function () {
+                $(".alert-warning,.alert-success").css('display','none');
+            });
+        })
+    </script>
+</block>

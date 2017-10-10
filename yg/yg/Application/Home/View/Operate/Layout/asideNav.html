@@ -1,0 +1,37 @@
+<ul class="aside-nav" id="asideNav">
+	<li role="presentation">
+		<a href="/">
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>首页
+		</a>
+	</li>
+	<li role="presentation">
+		<a href="javascript:void(0);">
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>年计划录入
+		</a>
+		<ul class="aside-menu-add">
+			<foreach name="departmentList" item="v" key="k" >
+				<li><a href="{:U('Operate/plan',array('department'=>$v['id']))}">{$v.name}</a></li>
+			</foreach>
+		</ul>
+	</li>
+	<li role="presentation">
+		<a href="javascript:void(0);">
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>年修正录入
+		</a>
+		<ul class="aside-menu-add">
+			<foreach name="departmentList" item="v" key="k" >
+				<li><a href="{:U('Operate/revise',array('department'=>$v['id']))}">{$v.name}</a></li>
+			</foreach>
+		</ul>
+	</li>
+	<li role="presentation">
+		<a href="javascript:void(0);">
+			<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>当周计划录入
+		</a>
+		<ul class="aside-menu-add">
+			<foreach name="departmentList" item="v" key="k" >
+				<li><a href="{:U('Operate/complete',array('department'=>$v['id']))}">{$v.name}</a></li>
+			</foreach>
+		</ul>
+	</li>
+</ul>

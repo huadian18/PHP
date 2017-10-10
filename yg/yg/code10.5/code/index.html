@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+<nav class="navbar-default navbar-blue">
+  <div class="container">
+    <!-- logo -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">brand</a>
+    </div>
+    <!-- 用户名 -->
+    <ul class="nav navbar-nav navbar-right">
+       <li><a href="addDataIndex.html" class="btn-menu">Admin</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="wrapper container">
+	<!--侧边导航栏-->
+	<ul class="aside-nav" id="asideNav">
+		
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>集团汇总
+	  	</a>
+	  	<ul class="aside-menu">
+	  		<li>2017年经营计划</li>
+	  		<li>2017年修正计划</li>
+	  		<li>2017年指标对比</li>
+	  	</ul>
+	  </li>
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>预制事业部
+	  	</a>
+	  	<ul class="aside-menu">
+	  		<li>2017年经营计划</li>
+	  		<li>2017年修正计划</li>
+	  		<li>2017年指标对比</li>
+	  	</ul>
+	  </li>
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>预办事业部
+	  	</a>
+	  	<ul class="aside-menu">
+	  		<li>2017年经营计划</li>
+	  		<li>2017年修正计划</li>
+	  		<li>2017年指标对比</li>
+	  	</ul>
+	  </li>
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>河北榆构
+	  	</a>
+	  	</li>
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>北京诚丰
+	  	</a>
+	  	</li>
+	  <li role="presentation">
+	  	<a href="javascript:void(0);">
+	  		<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>榆构模板
+	  	</a>
+	  </li>
+	</ul>
+	<!--右边主要内容-->
+	<div class="main">
+		<form>
+		  <div class="form-group col-md-2 col-sm-3">
+		    <select class="form-control">
+			  <option>年</option>
+			  <option>季</option>
+			  <option>月</option>
+			  <option>周</option>
+			</select>
+		  </div>
+		  <div class="form-group col-md-2 col-sm-3">
+		    <select class="form-control">
+			  <option>同比</option>
+			  <option>环比</option>
+			</select>
+		  </div>
+		</form>
+		<div class="container chartList">
+			<div class="row">
+				<div class="charItem col-md-6" id="chart1"></div>
+				<div class="charItem col-md-6" id="chart2"></div>
+				<div class="charItem col-md-6" id="chart3"></div>
+				<div class="charItem col-md-6" id="chart4"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<script type="text/javascript" src="./js/echarts.common.min.js"></script>
+<script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
