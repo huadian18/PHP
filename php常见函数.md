@@ -23,3 +23,12 @@
      
      var_dump(json_encode($demo));//string(12) "{"demo":0.1}"
      var_dump(serialize($demo));`//string(77) "a:1:{s:4:"demo";d:0.1000000000000000055511151231257827021181583404541015625;}"
+     
+### str_replace(mixed $search , mixed $replace , mixed $subject [, int &$count ])
+    $count(如果被指定，它的值将被设置为替换发生的次数。)
+| $search           | $replace    |  $subject       |
+| --------:         | -----:      | :----:          |
+| string / array    | string      |string / array   |
+| array             | array       |string / array   |
+
+###
